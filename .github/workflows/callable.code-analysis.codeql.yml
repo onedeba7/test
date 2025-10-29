@@ -43,6 +43,10 @@ jobs:
         uses: gradle/actions/setup-gradle@v4.4.3
         with:
           cache-read-only: true
+          
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+          
       - name: Run build with Gradle Wrapper
         run: |
           ./gradlew build -x intTest --no-daemon
