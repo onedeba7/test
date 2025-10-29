@@ -22,7 +22,9 @@ jobs:
         uses: gradle/actions/setup-gradle@v4.4.3
         with:
           cache-read-only: true
-
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+        
       - name: Generate javadoc (gradle)
         run: ./gradlew javadoc
 

@@ -19,6 +19,9 @@ jobs:
         with:
           cache-read-only: true
 
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
       # note the following two steps are identical but different names for better DX in GitHub Actions UI
       - name: Publish SNAPSHOT to Sonatype (Maven Central)
         if: github.ref == 'refs/heads/main'
